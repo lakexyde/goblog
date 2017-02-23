@@ -1,19 +1,19 @@
 package main
 
 import (
+    _ "github.com/lakexyde/goblog/routers"
     "github.com/astaxie/beego"
-   // "fmt"
-
+    "github.com/astaxie/beego/orm"
+    _ "github.com/mattn/go-sqlite3"
+    "time"
 )
-type MainController struct {
-    beego.Controller
-}
 
-func (this *MainController) Index(){
-    this.Data["json"] = "Hello World"
-    this.ServeJSON()
+func init(){
+    orm.RegisterDriver("sqlite", orm.DRSqlite)
+    orm.RegisterDataBase("default", "sqlite3", "db/blog.db")
 }
 
 func main(){
+    orm.DefaultTimeLoc = time.UTC
     beego.Run()
 }
