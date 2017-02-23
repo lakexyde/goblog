@@ -2,13 +2,159 @@ body{
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
 }
 *{
     box-sizing: border-box;
 }
+/*Typography*/
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 500;
+}
+
+h1 {
+    font-size: 32px;
+}
+h2{
+    font-size: 26px
+}
+h3 {
+    font-size: 22px;
+}
+h4{
+    font-size: 18px;
+}
+h5 {
+    font-size: 16px;
+}
+h6{
+    font-size: 15px;
+}
+a {
+    text-decoration: none;
+	color: inherit;
+}
+/*Helpers*/
+.clearfix::after, .cleafix::before{
+    content: "";
+    display: table;
+}
+.clearfix {
+    display: block;
+    clear: both;
+}
+/*main Sections begin*/
 .app {
     width: 100%;
     max-width: 900px;
     position: relative;
 
 }
+.lks-main {
+    width: 100%;
+    position: relative;
+}
+.lks-header {
+    text-align: center;
+}
+,lks-header h1 {
+
+}
+.lks-sidebar {
+    width: 250px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	background: #f5f7f9;
+	padding: 7em 0 0 0;
+	border-right: 1px solid #d6dce0;
+}
+.lks-sidebar-content {
+
+}
+.lks-main-wrapper {
+    margin-left: 250px;
+    display: inline-block;
+    //position: absolute;
+    //top: 0px;
+}
+.lks-header {
+    padding: 1em 3em;
+	border-bottom: 1px solid #d6dce0;
+	background: #f5f7f9;
+	color: #9eafba;
+}
+.lks-footer {
+    margin-top: 20px;
+}
+/*Main sections end*/
+/*Page Elements begin*/
+.posts{
+
+}
+.post {
+    padding: 3em;
+	border-bottom: 1px solid #d6dce0;
+}
+.post .post-title{
+    margin: 0;
+}
+.post-title a {
+    font-weight: 500;
+	text-decoration: none;
+	color: #2a2f35;
+	font-size: 1.5em;
+}
+.post-title a:hover{
+    color: #33acb7;
+}
+.post .post-summary{
+
+}
+#post {
+    padding: 1em 3em;
+}
+#post .post-title{
+    font-weight: 500;
+	text-decoration: none;
+	color: #2a2f35;
+	font-size: 2.5em;
+	margin-bottom: 0;
+}
+#post .post-content {
+    font-size: 1.1em;
+	line-height: 1.75;
+}
+#post .post-meta{
+    color: #9eafba;
+	margin: .5em 0 2em 0;
+}
+#lks-comments{
+
+}
+#page {
+    padding: 3em;
+}
+#profile-img {
+    width: 300px;
+	float: left;
+	margin-right: 2em;
+}
+#profile-img img{
+    width: 100%;
+	border-radius: 0.35em;
+}
+#page .content h1{
+    font-weight: 500;
+}
+#page .content a{
+    color: #33acb7;
+	font-weight: 700;
+	text-decoration: none;
+}
+/*Page Elements end*/
+/*Responsiveness*/
+
+/*responsiveness end*/

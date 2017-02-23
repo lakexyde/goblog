@@ -8,33 +8,40 @@
         {{ block "css" .}}{{end}}
     </head>
     <body>
-        <div class="app">
-            <header>
-                <h1>Hello World</h1>
-            </header>
+        <div class="app">    
             <section class="lks-main">
-                {{ block "content" .}}{{end}}
+                <section class="lks-main-wrapper">
+                    <header class="lks-header">
+                        {{block "pagetitle" .}}{{end}}
+                    </header>
+                    {{ block "content" .}}{{end}}
+                </section>
+                <div class="clearfix"></div>
+                <section class="lks-sidebar">
+                    <aside class="lks-sidebar-content">
+                        <div class="lks-sidebar-widget">
+                            A man of words and not of deeds
+                        </div>
+                        <div class="lks-sidebar-widget">
+                            It feels better biting down
+                        </div>
+                        <div class="lks-sidebar-widget">
+                            Making my way downtown walking fast faces pass when am hometown
+                        </div>
+                        <div class="lks-sidebar-widget">
+                            Staring blankly ahead
+                        </div>
+                        <div class="lks-sidebar-widget">
+                            A little bit longer and a little bit harder
+                        </div>
+                    </aside>
+                    <footer class="lks-footer">
+                        <center>This is the footer</center>
+                    </footer>
+                </section>
             </section>
-            <aside class="lks-sidebar">
-                <div class="lks-sidebar-widget">
-                    A man of words and not of deeds
-                </div>
-                <div class="lks-sidebar-widget">
-                    It feels better biting down
-                </div>
-                <div class="lks-sidebar-widget">
-                    Making my way downtown walking fast faces pass when am hometown
-                </div>
-                <div class="lks-sidebar-widget">
-                    Staring blankly ahead
-                </div>
-                <div class="lks-sidebar-widget">
-                    A little bit longer and a little bit harder
-                </div>
-            </aside>
-            <footer class="lks-footer">
-                <center>This is the footer</center>
-            </footer>
+            
+            
         </div>
         {{ block "js" .}}{{end}}
     </body>

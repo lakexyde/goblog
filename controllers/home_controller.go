@@ -10,7 +10,7 @@ type HomeController struct {
 
 func (this *HomeController) Index(){
     p := map[string]string{
-        "Title": "hello World",
+        "Title": "Blog",
         "Message": "This is a test message",
     }
     this.Data["p"] = p
