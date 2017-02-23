@@ -47,9 +47,9 @@ a {
 /*main Sections begin*/
 .app {
     width: 100%;
-    max-width: 900px;
+    max-width: 100px;
     position: relative;
-
+    margin: auto;
 }
 .lks-main {
     width: 100%;
@@ -77,8 +77,6 @@ a {
 .lks-main-wrapper {
     margin-left: 250px;
     display: inline-block;
-    //position: absolute;
-    //top: 0px;
 }
 .lks-header {
     padding: 1em 3em;

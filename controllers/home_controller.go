@@ -8,11 +8,11 @@ type HomeController struct {
     beego.Controller
 }
 
-func (this *HomeController) Index(){
+func (this *HomeController) Get(){
     p := map[string]string{
         "Title": "Blog",
         "Message": "This is a test message",
     }
     this.Data["p"] = p
-    this.TplName = "article/index.tpl"
+    this.TplName = "index.tpl"
 }

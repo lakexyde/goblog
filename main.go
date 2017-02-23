@@ -6,6 +6,7 @@ import (
     "github.com/astaxie/beego/orm"
     _ "github.com/mattn/go-sqlite3"
     "time"
+    //"fmt"
 )
 
 func init(){
@@ -15,5 +16,19 @@ func init(){
 
 func main(){
     orm.DefaultTimeLoc = time.UTC
+//     // Database alias.
+// name := "default"
+
+// // Drop table and re-create.
+// force := true
+
+// // Print log.
+// verbose := true
+
+// // Error.
+// err := orm.RunSyncdb(name, force, verbose)
+// if err != nil {
+//     fmt.Println(err)
+// }
     beego.Run()
 }
