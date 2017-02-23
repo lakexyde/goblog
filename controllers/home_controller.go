@@ -9,6 +9,10 @@ type HomeController struct {
 }
 
 func (this *HomeController) Index(){
-    this.Data["json"] = "Hello World \n Am here"
-    this.ServeJSON()
+    p := map[string]string{
+        "Title": "hello World",
+        "Message": "This is a test message",
+    }
+    this.Data["p"] = p
+    this.TplName = "article/index.tpl"
 }
