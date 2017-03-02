@@ -12,7 +12,7 @@
             <div class="posts">
                 {{range $p := .p}}
                     <article>
-                        <h3><a href="/blog/{{$p.Id}}">{{$p.Title}}</a></h3>
+                        <h3><a href="/{{$p.Id}}">{{$p.Title}}</a></h3>
                         <div>{{ $p.Content}}</div>
                     </article>
                 {{end}} 
