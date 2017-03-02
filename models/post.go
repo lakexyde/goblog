@@ -38,3 +38,20 @@ func ShowArticle(id int64) *Article {
     }
     return nil
 }
+
+func SaveArticle(article *Article){
+    o := orm.NewOrm()
+    num, err := o.Insert(article)
+    if err != nil {
+        beego.Error("An error occured: ", err)
+    } else {
+        beego.Info("Successfully added article", num)
+    }
+}
+
+func DeleteArticle(id int64) {
+    o := orm.NewOrm()
+    //article := Article{Id: id}
+    num, _ := o.Delete(&Article{Id: id})
+    beego.Info("Article deleted", num)
+}

@@ -1,7 +1,20 @@
-{{template "layout/home.tpl" .}}
-{{define "content"}}
-    <div class="">
-        <h1 class="post-title">Edit Article</h1>
-        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium nesciunt accusamus aperiam hic magni vitae. Aspernatur vel ipsa, sint, excepturi ad itaque quod quis nulla deleniti eligendi harum libero iure?</div>
-    </div>
-{{end}}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Edit Article</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="static/css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="app">
+            <a href="/">Home</a>
+            <h1>Edit Article</h1>
+            <form>
+
+            </form>
+        </div>
+    </body>
+</html>
+
+    

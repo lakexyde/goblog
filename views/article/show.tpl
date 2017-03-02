@@ -1,10 +1,23 @@
-{{template "layout/home.tpl" .}}
-{{ define "content" }}
-    <article class="" id="post">
-        <h1 class="post-title">{{.p.Title}}</h1>
-        <div class="post-meta"></div>
-        <div class="post-content">
-            {{.p.Content}}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="static/css/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="app">
+            <a href="/">Home</a>
+            <article class="" id="post">
+                <h1 class="post-title">{{.a.Title}}</h1>
+                <div class="post-meta"></div>
+                <div class="post-content">
+                    {{.a.Content}}
+                </div>
+            </article>
         </div>
-    </article>
-{{end}}
+    </body>
+</html>
+
+    
