@@ -8,7 +8,7 @@
     </head>
     <body>
         <div class="app">
-            <a href="/">Home</a>
+            <a href="/">Home</a> | <a href="/new">New Article</a> | <a href="/delete/{{.a.Id}}">Delete</a>
             <article class="" id="post">
                 <h1 class="post-title">{{.a.Title}}</h1>
                 <div class="post-meta"></div>

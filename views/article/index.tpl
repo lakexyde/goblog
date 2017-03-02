@@ -8,7 +8,7 @@
     </head>
     <body>
         <div class="app">
-            <a href="/">Home</a>
+            <a href="/">Home</a> | <a href="/new">New Article</a>
             <div class="posts">
                 {{range $p := .p}}
                     <article>

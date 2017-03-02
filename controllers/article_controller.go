@@ -35,7 +35,7 @@ func (this *ArticleController) Create(){
     if err := this.ParseForm(&article); err == nil {
         models.SaveArticle(&article) 
     }
-    this.Redirect("/blog", 302)
+    this.Redirect("/", 302)
 }
 
 func (this *ArticleController) Edit(){
@@ -49,7 +49,9 @@ func (this *ArticleController) Update(){
 
 func (this *ArticleController) Delete(){
     uid := this.Ctx.Input.Param(":id")
-    id, _ := strconv.ParseInt(uid, 10, 64)
-    models.DeleteArticle(id)
-    this.Redirect("/blog", 302)
+    id, err := strconv.ParseInt(uid, 10, 64)
+    if err == nil{
+        models.DeleteArticle(id)
+    }
+    this.Redirect("/", 302)
 }

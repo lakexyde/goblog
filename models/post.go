@@ -51,7 +51,14 @@ func SaveArticle(article *Article){
 
 func DeleteArticle(id int64) {
     o := orm.NewOrm()
-    //article := Article{Id: id}
-    num, _ := o.Delete(&Article{Id: id})
-    beego.Info("Article deleted", num)
+    article := Article{Id : id}
+    if err := o.Read(&article); err == nil {
+        var num int64
+        num, err = o.Delete(&Article{Id: id})
+        if err != nil {
+            beego.Error(err)
+        }else {
+            beego.Info("Article deleted", num)
+        }
+    }
 }
