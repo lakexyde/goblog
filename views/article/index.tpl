@@ -13,7 +13,7 @@
                 {{range $p := .p}}
                     <article>
                         <h3><a href="/{{$p.Id}}">{{$p.Title}}</a></h3>
-                        <div>{{ $p.Content}}</div>
+                        <div>{{ $p.Content | str2html }}</div>
                     </article>
                 {{end}} 
             </div>

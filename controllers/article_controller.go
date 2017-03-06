@@ -4,6 +4,7 @@ import (
     "github.com/astaxie/beego"
     "github.com/lakexyde/goblog/models"
     "strconv"
+    "encoding/json"
 )
 
 type ArticleController struct{
@@ -22,7 +23,7 @@ func (this *ArticleController) Show(){
     uid := this.Ctx.Input.Param(":id")
     id, _ := strconv.ParseInt(uid, 10, 64)
     article = models.ShowArticle(id)
-    this.Data["a"] = article
+    this.Data["p"] = article
     this.TplName = "article/show.tpl"
 }
 
@@ -39,12 +40,19 @@ func (this *ArticleController) Create(){
 }
 
 func (this *ArticleController) Edit(){
-
+    uid := this.Ctx.Input.Param(":id")
+    id, _ := strconv.ParseInt(uid, 10, 64)
+    var article *models.Article
+    article = models.ShowArticle(id)
+    this.Data["a"] = article
     this.TplName = "article/edit.tpl"
 }
 
 func (this *ArticleController) Update(){
-
+    var article models.Article
+    json.Unmarshal(this.Ctx.Input.RequestBody, &article) //models.UpdateArticle(&article)
+    this.Data["json"] = article
+    this.ServeJSON()      
 }
 
 func (this *ArticleController) Delete(){

@@ -8,12 +8,13 @@
     </head>
     <body>
         <div class="app">
-            <a href="/">Home</a> | <a href="/new">New Article</a> | <a href="/delete/{{.a.Id}}">Delete</a>
+            <a href="/">Home</a> | <a href="/new">New Article</a> | <a href="/edit/{{.p.Id}}">Edit</a> | <a href="/delete/{{.p.Id}}">Delete</a>
             <article class="" id="post">
-                <h1 class="post-title">{{.a.Title}}</h1>
+                <h1 class="post-title">{{ .p.Title }}</h1>
+                <span>{{ date .p.Created "Y-m-d H:i:s" }}</span>
                 <div class="post-meta"></div>
                 <div class="post-content">
-                    {{.a.Content}}
+                    {{.p.Content | str2html}}
                 </div>
             </article>
         </div>

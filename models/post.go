@@ -9,7 +9,7 @@ import (
 type Article struct{
     Id int64 `orm:""`
     Title string `orm:"size(100);unique"`
-    Content string `orm:"type(text)"`
+    Content string `orm:"type(longtext)"`
     Created time.Time `orm:"auto_now_add;type(datetime)"`
     Updated time.Time `orm:"auto_now;type(datetime)"`
 }
@@ -46,6 +46,19 @@ func SaveArticle(article *Article){
         beego.Error("An error occured: ", err)
     } else {
         beego.Info("Successfully added article", num)
+    }
+}
+
+func UpdateArticle(a *Article){
+    o := orm.NewOrm()
+    article := Article{Id: a.Id}
+    if o.Read(&article) == nil {
+        num, err := o.Update(&article)
+        if err != nil{
+            beego.Error(err)
+        } else {
+            beego.Info("Article edited Successfully", num)
+        }         
     }
 }
 
